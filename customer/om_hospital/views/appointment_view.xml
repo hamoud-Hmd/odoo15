@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Start create view -->
+    <!--Start tree view  -->
+    <record id="view_appointment_tree" model="ir.ui.view">
+        <field name="name">hospital.appointment.tree</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="reference"/>
+                <field name="patient_id"/>
+                <field name="note"/>
+                <field name="date_appointment"/>
+            </tree>
+
+        </field>
+    </record>
+    <!--End tree view  -->
+    <!-- Start form view -->
+    <record id="view_appointment_form" model="ir.ui.view">
+        <field name="name">hospital.appointment.form</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <!-- Start add states and status bar -->
+                <header>
+                    <!--Start creating button -->
+                    <button id="button_confirm" name="action_confirm" string="Confirm"
+                            class="btn-primary" type="object" states="draft" confirm="Are you sure that you want to confirm"/>
+                    <button id="button_done" name="action_done" string="Mark As Done"
+                            class="btn-primary" type="object" states="confirm"/>
+                    <button id="button_draft" name="action_draft" string="Set To Draft"
+                            class="btn-danger" type="object" states="cancel"/>
+                    <button id="button_cancel" name="action_cancel" string="Cancel"
+                            type="object" states="confirm,done,draft" confirm="Are you sure that you want to cancel"/>
+                    <!--End Creating button -->
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done,confirm"/>
+                </header>
+                <!-- End states and status bar -->
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="reference" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="age"/>
+                            <field name="gender" readonly="1" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="date_appointment"/>
+                            <field name="date_checkup"/>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </sheet>
+                <!--Start add  chatter to form view -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+                <!--End chatter to form view  -->
+            </form>
+        </field>
+    </record>
+    <!--End Form view  -->
+
+    <!-- Start search view -->
+    <record id="view_appointment_search" model="ir.ui.view">
+        <field name="name">hospital.appointment.search</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <search string="Appointments">
+                <!--search by patient name and reference  -->
+                <field name="reference"/>
+                <field name="patient_id"/>
+                <!--End search by patient name and reference  -->
+                <separator/>
+                <filter string="Patient" name="patient_id" context="{'group_by': 'patient_id'}"/>
+            </search>
+        </field>
+    </record>
+    <!-- End search view  -->
+
+    <!--End create view  -->
+
+    <!-- partie 2 create an action -->
+    <record id="action_hospital_appointment" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Appointment!
+            </p>
+        </field>
+    </record>
+    <!-- End create an action -->
+
+    <!-- the second menu has a parent(hospital_root)  -->
+    <menuitem id="menu_appointment_root"
+              name="Appointments"
+              parent="menu_hospital_root"
+              sequence="20"/>
+    <!-- the third  menu has a parent(hospital_patient_root,this last has a parent by before )-->
+    <menuitem id="menu_appointment"
+              name="Appointments"
+              parent="menu_appointment_root"
+              action="action_hospital_appointment"
+              sequence="10"/>
+
+
+    <menuitem id="menu_create_appointment"
+              name="Create Appointment"
+              parent="menu_appointment_root"
+              action="action_create_appointment"
+              sequence="10"/>
+    <!-- End top menu item -->
+
+
+</odoo>
