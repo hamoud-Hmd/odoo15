@@ -23,7 +23,9 @@
         'views/appointment_view.xml',
         'views/doctor_view.xml',
         'views/sale.xml',
-
+        'report/patient_card.xml',
+        'report/patient_details_template.xml',
+        'report/report.xml'
     ],
     'demo': [],
     'qweb': [],
