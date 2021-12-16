@@ -27,5 +27,10 @@
     </record>
     <!-- End tree view -->
 
+    <menuitem id="sale_menu_appointment"
+              name="Appointments"
+              parent="sale.sale_order_menu"
+              action="action_hospital_appointment"
+              sequence="2"/>
 
 </odoo>
