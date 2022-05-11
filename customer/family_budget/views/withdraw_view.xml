@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_withdraw_form" model="ir.ui.view">
+        <field name="name">family.withdraw.form</field>
+        <field name="model">family.withdraw</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="amount"/>
+                            <field name="reason"/>
+                        </group>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <!--Start tree view  -->
+    <record id="view_withdraw_tree" model="ir.ui.view">
+        <field name="name">family.withdraw.tree</field>
+        <field name="model">family.withdraw</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="amount"/>
+                <field name="reason"/>
+                <field name="total"/>
+            </tree>
+        </field>
+    </record>
+    <!--End tree view  -->
+
+
+    <!-- partie 2 create an action -->
+    <record id="withdraw_action" model="ir.actions.act_window">
+        <field name="name">Withdraws</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">family.withdraw</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first withdraw!
+            </p>
+        </field>
+    </record>
+
+    <record id="budget_action" model="ir.actions.act_window">
+        <field name="name">Budget</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">family.budget</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your Budget!
+            </p>
+        </field>
+    </record>
+    <!-- End create an action -->
+
+
+    <menuitem id="family_withdraw_root"
+              name="Withdraws"
+              parent="family_operation_root"
+              action="withdraw_action"
+              sequence="10"/>
+
+    <menuitem id="family_budget_root"
+              name="Budget"
+              parent="family_root"
+              action="budget_action"
+              sequence="10"/>
+
+
+</odoo>

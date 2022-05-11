@@ -13,8 +13,8 @@ class HospitalAppointment(models.Model):
     _order = 'id desc'
     _rec_name = 'patient_id'
 
-    patient_id = fields.Many2one('hospital.patient', string='Patient', tracking=True)
-    doctor_id = fields.Many2one('hospital.doctor', string='Doctor', tracking=True)
+    patient_id = fields.Many2one('hospital.patient', string='Patient', tracking=True, required=True)
+    doctor_id = fields.Many2one('hospital.doctor', string='Doctor', tracking=True, required=True)
     age = fields.Integer(string='Age', related='patient_id.age', tracking=True)
     reference = fields.Char(string='Reference', required=True, readonly=True,
                             default=lambda self: _('New'))
@@ -33,6 +33,12 @@ class HospitalAppointment(models.Model):
     prescription_line_ids = fields.One2many('appointment.prescription.lines', 'appointment_id',
                                            string='Prescription Lines')
 
+    def action_url(self):
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'new', #or self if you want to get opened in the same page
+            'url': 'https://%s/' % self.prescription
+        }
     def action_confirm(self):
         self.state = 'confirm'
 

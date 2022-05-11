@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="default_budget" model="family.budget">
+        </record>
+        <!--Start Sequence here-->
+        <record id="seq_family_contribution" model="ir.sequence">
+            <field name="name">Contribution sequence</field>
+            <field name="code">family.contribution</field>
+            <field name="prefix">FC</field>
+            <field name="padding">5</field>
+            <field eval="False" name="company_id"/>
+        </record>
+        <!--End Sequence here-->
+
+        <record id="seq_family_withdraw" model="ir.sequence">
+            <field name="name">Withdraw sequence</field>
+            <field name="code">family.withdraw</field>
+            <field name="prefix">FW</field>
+            <field name="padding">5</field>
+            <field eval="False" name="company_id"/>
+        </record>
+    </data>
+</odoo>

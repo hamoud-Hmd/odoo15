@@ -60,6 +60,8 @@ class HospitalPatient(models.Model):
         res = super(HospitalPatient, self).create(vals)
         return res
 
+
+
     @api.model
     def default_get(self, fields):
         res = super(HospitalPatient, self).default_get(fields)
@@ -85,3 +87,14 @@ class HospitalPatient(models.Model):
             name = '[' + rec.reference + '] ' + rec.name
             result.append((rec.id, name))
         return result
+
+    def action_open_appointments(self):
+        return {
+            'name': _("Appointment"),
+            'type': 'ir.actions.act_window',
+            'view_mode': 'tree,form',
+            'res_model': 'hospital.appointment',
+            'domain': [('patient_id', '=', self.id)],
+            'context': {'default_patient_id': self.id},
+            'target': 'current',
+        }

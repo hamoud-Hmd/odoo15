@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+        <!--Start tree view  -->
+    <record id="view_budget_tree" model="ir.ui.view">
+        <field name="name">family.budget.tree</field>
+        <field name="model">family.budget</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0">
+                <field name="id"/>
+                <field name="contribution_total"/>
+                <field name="withdraw_total"/>
+                <field name="active_total"/>
+            </tree>
+        </field>
+    </record>
+    <!--End tree view  -->
+
+<!--    <record id="budget_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Budget</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">family.budget</field>-->
+<!--        <field name="view_mode">tree,kanban,form</field>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                Create your Budget!-->
+<!--            </p>-->
+<!--        </field>-->
+<!--    </record>-->
+    <!-- End create an action -->
+
+
+<!--    <menuitem id="family_budget_root"-->
+<!--              name="Budget"-->
+<!--              parent="family_root"-->
+<!--              action="budget_action"-->
+<!--              sequence="10"/>-->
+
+
+</odoo>

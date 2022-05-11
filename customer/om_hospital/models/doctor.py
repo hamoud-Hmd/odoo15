@@ -2,9 +2,6 @@
 from odoo import api, fields, models, _
 
 
-
-
-
 class HospitalDoctor(models.Model):
     _name = "hospital.doctor"
     # inherit  to  mail so that we use mail chatter and activity so that we us schedule activity
@@ -24,6 +21,8 @@ class HospitalDoctor(models.Model):
     ], required=True, default='male', tracking=True)
     note = fields.Text(string='Description', tracking=True)
     image = fields.Binary(string="Image")
+    appointment_count = fields.Integer(string='Appointment Count', compute='_compute_appontment_count')
+    active = fields.Boolean(string='Active', default=True)
 
     @api.model
     def create(self, vals):
@@ -34,9 +33,14 @@ class HospitalDoctor(models.Model):
         res = super(HospitalDoctor, self).create(vals)
         return res
 
-
     def copy(self, default=None):
         default = dict(default or {})
         if ('doctor_name' not in default):
             default['doctor_name'] = _("%s (copy)", self.doctor_name)
         return super(HospitalDoctor, self).copy(default)
+
+
+    def _compute_appontment_count(self):
+        for rec in self:
+            appointment_count = rec.env['hospital.appointment'].search_count([('doctor_id', '=', rec.id)])
+            rec.appointment_count = appointment_count

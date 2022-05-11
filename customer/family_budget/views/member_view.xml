@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- Start kanban view -->
+    <record id="view_member_kanban" model="ir.ui.view">
+        <field name="name">family.member.kanban</field>
+        <field name="model">family.member</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="image" widget="image" class="oe_avatar"/>
+                <field name="id"/>
+                <field name="first_name"/>
+                <field name="middle_name"/>
+                <field name="last_name"/>
+                <field name="gender"/>
+                <field name="age"/>
+                <field name="position"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+
+                                <ul>
+                                    <li>
+                                        First Name:
+                                        <field name="first_name"/>
+                                    </li>
+                                    <li>
+                                        Last Name:
+                                        <field name="last_name"/>
+                                    </li>
+                                    <li t-if="record.middle_name.raw_value">
+                                        Middle Name:
+                                        <field name="middle_name"/>
+                                    </li>
+                                    <li>
+                                        gender:
+                                        <field name="gender"/>
+                                    </li>
+                                    <li>
+                                        age:
+                                        <field name="age"/>
+                                    </li>
+                                    <li t-if="record.position.raw_value">
+                                        Position (Job):
+                                        <field name="position"/>
+                                    </li>
+                                </ul>
+
+                                <div class="o_kanban_image">
+                                    <img class="o_kanban_image_inner_pic"
+                                         t-att-src="kanban_image('family.member', 'image', record.id.raw_value)"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!--End Kanban view  -->
+
+
+    <!-- Start search view -->
+    <record id="view_member_search" model="ir.ui.view">
+        <field name="name">family.member.search</field>
+        <field name="model">family.member</field>
+        <field name="arch" type="xml">
+            <search string="Members">
+
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="name"  force_save="1"/>
+
+                <separator/>
+                <filter string="Family name" name="family_name" context="{'group_by': 'last_name'}"/>
+            </search>
+        </field>
+    </record>
+    <!-- End search view  -->
+
+
+    <!--Start tree view  -->
+    <record id="view_member_tree" model="ir.ui.view">
+        <field name="name">family.member.tree</field>
+        <field name="model">family.member</field>
+        <field name="groups_id" eval="[(4, ref('group_family_manager'))]"/>
+
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"  force_save="1"/>
+                <field name="age"/>
+                <field name="position"/>
+                <field name="last_contribution"/>
+                <field name="tel"/>
+                <field name="nni"/>
+            </tree>
+        </field>
+    </record>
+    <!--End tree view  -->
+
+
+    <!-- Start form view -->
+    <record id="view_member_form" model="ir.ui.view">
+        <field name="name">family.member.form</field>
+        <field name="model">family.member</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_contributions" type="object" class="oe_stat_button" icon="fa-gift">
+                            <div class="o_stat_info">
+                                <span>
+                                    <field name="contribution_count" class="o_stat_value"/>
+                                </span>
+                                <span class="o_stat_text">Contributions</span>
+                            </div>
+                        </button>
+
+                        <button name="action_open_contributions" type="object" class="oe_stat_button" icon="fa-money">
+                            <div class="o_stat_info">
+                                <span>
+                                    <field name="total_cost" class="o_stat_value"/>
+                                </span>
+                                <span class="o_stat_text">UM</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"  force_save="1"/>
+                        </h1>
+                    </div>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="middle_name"/>
+                            <field name="last_name"/>
+                            <field name="nni"/>
+                            <field name="tel"/>
+                            <field name="is_active"/>
+                        </group>
+
+                        <group>
+                            <field name="gender"/>
+                            <field name="age" readonly="1"/>
+                            <field name="birthdate"/>
+                            <field name="last_contribution"/>
+                            <field name="position"/>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <!--End Form view  -->
+
+
+    <!-- partie 2 create an action -->
+    <record id="member_action" model="ir.actions.act_window">
+        <field name="name">Members</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">family.member</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_family_name': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first member!
+            </p>
+        </field>
+    </record>
+    <!-- End create an action -->
+
+
+    <!-- Top menu item -->
+    <menuitem id="family_root"
+              name="Family"
+              sequence="0"/>
+
+    <menuitem id="family_member_root"
+              name="Members"
+              parent="family_root"
+              action="member_action"
+              sequence="10"/>
+    <!-- End top menu item -->
+
+
+</odoo>

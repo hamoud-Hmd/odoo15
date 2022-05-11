@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <record id="action_confirm_appointments" model="ir.actions.server">
+        <field name="name">Confirm Appointment</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_hospital_appointment"/>
+        <field name="binding_model_id" ref="model_hospital_appointment"/>
+        <field name="state">code</field>
+        <field name="code">records.action_confirm()</field>
+    </record>
     <!--Start create view -->
     <!--Start tree view  -->
     <record id="view_appointment_tree" model="ir.ui.view">
@@ -21,6 +30,8 @@
                 <field name="date_checkup" optional="hide"/>
                 <field name="note" optional="hide"/>
                 <field name="state" optional="hide"/>
+
+
             </tree>
 
         </field>
@@ -45,6 +56,7 @@
                     <button id="button_cancel" name="action_cancel" string="Cancel"
                             type="object" states="confirm,done,draft" confirm="Are you sure that you want to cancel"/>
                     <!--End Creating button -->
+                    <button name="action_url" string="Open URL" class="btn-primary" type="object"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,done,confirm"/>
                 </header>
                 <!-- End states and status bar -->
@@ -117,6 +129,10 @@
                 <!--End search by patient name and reference  -->
                 <separator/>
                 <filter string="Patient" name="patient_id" context="{'group_by': 'patient_id'}"/>
+                <searchpanel>
+                    <field name="state" string="Status"/>
+
+                </searchpanel>
             </search>
         </field>
     </record>

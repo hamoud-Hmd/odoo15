@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_contribution_form" model="ir.ui.view">
+        <field name="name">family.contribution.form</field>
+        <field name="model">family.contribution</field>
+        <field name="groups_id" eval="[(4, ref('group_family_manager'))]"/>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="member_id"/>
+                        </group>
+                        <group>
+                            <field name="amount"/>
+                        </group>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <!--Start tree view  -->
+    <record id="view_contribution_tree" model="ir.ui.view">
+        <field name="name">family.contribution.tree</field>
+        <field name="model">family.contribution</field>
+        <field name="groups_id" eval="[(4, ref('group_family_manager'))]"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+    <!--End tree view  -->
+    <record id="view_contribution_search" model="ir.ui.view">
+        <field name="name">family.contribution.search</field>
+        <field name="model">family.contribution</field>
+        <field name="arch" type="xml">
+            <search string="Contributions">
+                <!--search by name and note  -->
+
+                <!--End search by name and note -->
+                <separator/>
+
+                <!--begin Group By -->
+                <filter string="Member" name="member_id" context="{'group_by': 'member_id'}"/>
+                <filter string="Amount" name="amount" context="{'group_by': 'amount'}"/>
+                <!--end Group By -->
+            </search>
+        </field>
+    </record>
+
+    <!-- partie 2 create an action -->
+    <record id="contribution_action" model="ir.actions.act_window">
+        <field name="name">Contribution</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">family.contribution</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{'search_default_member_id': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first contribution!
+            </p>
+        </field>
+    </record>
+    <!-- End create an action -->
+
+
+    <menuitem id="family_operation_root"
+              name="Operations"
+              parent="family_root"
+              sequence="10"/>
+
+
+    <menuitem id="family_contribution_root"
+              name="Contributions"
+              parent="family_operation_root"
+              action="contribution_action"
+              sequence="10"/>
+
+    <record id="family_operation_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('group_family_manager'))]"/>
+    </record>
+
+</odoo>

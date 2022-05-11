@@ -1,0 +1,594 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* family_budget
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-20 14:50+0000\n"
+"PO-Revision-Date: 2022-01-20 14:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_form
+msgid "<span class=\"o_stat_text\">Contributions</span>"
+msgstr "<span class=\"o_stat_text\">المساهمات</span>"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_form
+msgid "<span class=\"o_stat_text\">UM</span>"
+msgstr ""
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__is_active
+msgid "Active"
+msgstr "نشط"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__active_total
+msgid "Active Total"
+msgstr "المبلغ المتاح"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__age
+msgid "Age"
+msgstr "العمر"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__amount
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__amount
+#: model_terms:ir.ui.view,arch_db:family_budget.view_contribution_search
+#, python-format
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__birthdate
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: family_budget
+#: model:ir.actions.act_window,name:family_budget.budget_action
+#: model:ir.ui.menu,name:family_budget.family_budget_root
+msgid "Budget"
+msgstr "الصندوق"
+
+#. module: family_budget
+#: model:ir.actions.act_window,name:family_budget.contribution_action
+msgid "Contribution"
+msgstr "مساهمة"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__contribution_count
+msgid "Contribution Count"
+msgstr "عدد المساهمات"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__contribution_total
+msgid "Contribution Total"
+msgstr "مجموع المساهمات"
+
+#. module: family_budget
+#: code:addons/family_budget/models/member.py:0
+#: model:ir.ui.menu,name:family_budget.family_contribution_root
+#: model_terms:ir.ui.view,arch_db:family_budget.view_contribution_search
+#, python-format
+msgid "Contributions"
+msgstr "المساهمات"
+
+#. module: family_budget
+#: model_terms:ir.actions.act_window,help:family_budget.budget_action
+msgid "Create your Budget!"
+msgstr ""
+
+#. module: family_budget
+#: model_terms:ir.actions.act_window,help:family_budget.contribution_action
+msgid "Create your first contribution!"
+msgstr "أنشئ مساهمتك الأولى!"
+
+#. module: family_budget
+#: model_terms:ir.actions.act_window,help:family_budget.member_action
+msgid "Create your first member!"
+msgstr "قم بإنشاء العضو الأول من العائلة!"
+
+#. module: family_budget
+#: model_terms:ir.actions.act_window,help:family_budget.withdraw_action
+msgid "Create your first withdraw!"
+msgstr "قم بإنشاء أول عملية سحب!"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__create_uid
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__create_uid
+#: model:ir.model.fields,field_description:family_budget.field_family_member__create_uid
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__create_date
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__create_date
+#: model:ir.model.fields,field_description:family_budget.field_family_member__create_date
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#, python-format
+msgid "Current Budget"
+msgstr "الميزانية الحالية"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#: model:ir.ui.menu,name:family_budget.menu_family_dashboard
+#, python-format
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__debt
+msgid "Debt"
+msgstr "الدين"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#, python-format
+msgid "Members in Debt"
+msgstr "الأشخاص المديونين"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__note
+msgid "Description"
+msgstr "الوصف"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__display_name
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__display_name
+#: model:ir.model.fields,field_description:family_budget.field_family_member__display_name
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: family_budget
+#: model:ir.ui.menu,name:family_budget.family_root
+msgid "Family"
+msgstr "العائلة"
+
+#. module: family_budget
+#: model:ir.actions.client,name:family_budget.action_family_report_all
+msgid "Family Report"
+msgstr ""
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__family_member__gender__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__first_name
+msgid "First Name"
+msgstr "الاسم"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_kanban
+msgid "First Name:"
+msgstr "<strong>الاسم:<strong>"
+
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__name
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__gender
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__id
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__id
+#: model:ir.model.fields,field_description:family_budget.field_family_member__id
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى استثناء النشاط"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__message_needaction
+#: model:ir.model.fields,help:family_budget.field_family_member__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__image
+msgid "Image"
+msgstr "صورة"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__last_contribution
+msgid "Last Contribution"
+msgstr "تاريخ اخر مساهمة"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget____last_update
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution____last_update
+#: model:ir.model.fields,field_description:family_budget.field_family_member____last_update
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__last_name
+msgid "Last Name"
+msgstr "الإسم العائلي"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_kanban
+msgid "Last Name:"
+msgstr "<strong>الاسم العائلي:<strong>"
+
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__write_uid
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__write_uid
+#: model:ir.model.fields,field_description:family_budget.field_family_member__write_uid
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__write_date
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__write_date
+#: model:ir.model.fields,field_description:family_budget.field_family_member__write_date
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: family_budget
+#: model:ir.model.fields.selection,name:family_budget.selection__family_member__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/static/src/js/family_dashboard.js:0
+#: code:addons/family_budget/static/src/js/family_dashboard.js:0
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__member_id
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__user_id
+#: model_terms:ir.ui.view,arch_db:family_budget.view_contribution_search
+#, python-format
+msgid "Member"
+msgstr "عضو"
+
+#. module: family_budget
+#: model:ir.actions.act_window,name:family_budget.member_action
+#: model:ir.ui.menu,name:family_budget.family_member_root
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_search
+msgid "Members"
+msgstr "الأعضاء"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__middle_name
+msgid "Middle Name"
+msgstr "إسم الأب"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_kanban
+msgid "Middle Name:"
+msgstr "<strong>اسم الاب:<strong>"
+
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__nni
+msgid "NNI"
+msgstr "ر.و.ت"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/models/member.py:0
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#, python-format
+msgid "Name"
+msgstr "الاسم"
+
+#. module: family_budget
+#: code:addons/family_budget/models/contribution.py:0
+#: code:addons/family_budget/models/contribution.py:0
+#: code:addons/family_budget/models/contribution.py:0
+#: code:addons/family_budget/models/withdraw.py:0
+#: code:addons/family_budget/models/withdraw.py:0
+#: code:addons/family_budget/models/withdraw.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: family_budget
+#: model:ir.ui.menu,name:family_budget.family_operation_root
+msgid "Operations"
+msgstr "العمليات"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__position
+msgid "Position (Job)"
+msgstr "الوظيفة"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_kanban
+msgid "Position (Job):"
+msgstr "<strong>العمل:<strong>"
+
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__name
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__name
+msgid "Reference"
+msgstr "رقم المرجع"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__start_date
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__tel
+msgid "Tel"
+msgstr "الهاتف:"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#, python-format
+msgid "Top 5 Contributors"
+msgstr "أفضل 5 مساهمين"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_contribution__total
+#: model:ir.model.fields,field_description:family_budget.field_family_withdraw__total
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__total_cost
+msgid "Total Cost"
+msgstr "التكلفة الإجمالية"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#, python-format
+msgid "Total Members"
+msgstr "اجمالي الاعضاء"
+
+#. module: family_budget
+#: model:ir.model.fields,help:family_budget.field_family_member__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_member__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: family_budget
+#: model:ir.model.fields,field_description:family_budget.field_family_budget__withdraw_total
+msgid "Withdraw Total"
+msgstr "اجمالي السحب"
+
+#. module: family_budget
+#: model:ir.actions.act_window,name:family_budget.withdraw_action
+#: model:ir.ui.menu,name:family_budget.family_withdraw_root
+msgid "Withdraws"
+msgstr "المصروفات"
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_kanban
+msgid "age:"
+msgstr "<strong>العمر:<strong>"
+
+#. module: family_budget
+#: model:ir.model,name:family_budget.model_family_budget
+msgid "family.budget"
+msgstr ""
+
+#. module: family_budget
+#: model:ir.model,name:family_budget.model_family_contribution
+msgid "family.contribution"
+msgstr ""
+
+#. module: family_budget
+#: model:ir.model,name:family_budget.model_family_member
+msgid "family.member"
+msgstr ""
+
+#. module: family_budget
+#: model:ir.model,name:family_budget.model_family_withdraw
+msgid "family.withdraw"
+msgstr ""
+
+#. module: family_budget
+#: model_terms:ir.ui.view,arch_db:family_budget.view_member_kanban
+msgid "gender:"
+msgstr "<strong>الجنس:<strong>"
+
+#. module: family_budget
+#. openerp-web
+#: code:addons/family_budget/static/src/xml/template.xml:0
+#, python-format
+msgid "statistics and rapports"
+msgstr ""
